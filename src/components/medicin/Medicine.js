@@ -3,7 +3,7 @@ import classes from "./Medicine.module.css";
 
 const Medicine = () => {
   return (
-    <div className={classes.medicine}>
+    <div className="">
       <AvailableMedicine />
     </div>
   );

@@ -1,4 +1,5 @@
 import classes from "./MedicineItem.module.css";
+import MedicineForm from "./MedicineForm";
 
 const MedicineItem = (props) => {
   return (
@@ -9,7 +10,7 @@ const MedicineItem = (props) => {
         <div className={classes.price}>{props.medicine.price}</div>
       </div>
       <div>
-        <h3>form</h3>
+        <MedicineForm />
       </div>
     </li>
   );
