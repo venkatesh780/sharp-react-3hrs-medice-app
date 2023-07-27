@@ -1,10 +1,15 @@
 import classes from "./AvailableMedicine.module.css";
-import { DUMMY_MEDICINE } from "../utils/config";
+
 import Card from "../UI/Card";
 import MedicineItem from "./MedicineItem";
+import { useContext } from "react";
+import AddMedicineContext from "../utils/AddMedicineContext";
 
 const AvailableMedicine = () => {
-  const medinceList = DUMMY_MEDICINE.map((medicine) => (
+  const medicineCtx = useContext(AddMedicineContext);
+
+  const medicines = medicineCtx.items;
+  const medinceList = medicines.map((medicine) => (
     <MedicineItem medicine={medicine} key={medicine.id} />
   ));
 

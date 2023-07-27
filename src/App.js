@@ -3,6 +3,7 @@ import Medicine from "./components/medicin/Medicine";
 import Cart from "./components/cart/Cart";
 import { useState } from "react";
 import CartProvider from "./components/utils/CartProvider";
+import AddMedicineContextProvider from "./components/utils/AddMedicineContextProvider";
 
 function App() {
   const [isCartShown, setIsCartShown] = useState(false);
@@ -15,9 +16,11 @@ function App() {
   };
   return (
     <CartProvider>
-      {isCartShown && <Cart onCloseCart={hideCart} />}
-      <Header onOpenCart={showCart} />
-      <Medicine />
+      <AddMedicineContextProvider>
+        {isCartShown && <Cart onCloseCart={hideCart} />}
+        <Header onOpenCart={showCart} />
+        <Medicine />
+      </AddMedicineContextProvider>
     </CartProvider>
   );
 }
