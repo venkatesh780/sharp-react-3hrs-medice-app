@@ -5,9 +5,9 @@ import CartContext from "../utils/CartContext";
 import CartItem from "./CartItem";
 
 const Cart = (props) => {
-  const items = [{ id: "c1", name: "Para", price: 16, amount: 1 }];
   const cartCtx = useContext(CartContext);
   const cartCtxItems = cartCtx.items;
+  const totalAmount = cartCtx.totalAmount;
 
   const cartItems = (
     <ul className={classes["cart-items"]}>
@@ -28,7 +28,7 @@ const Cart = (props) => {
       {cartItems}
       <div className={classes.total}>
         <span>Total Amount</span>
-        <span>{0}</span>
+        <span>{totalAmount}</span>
       </div>
       <div className={classes.actions}>
         <button className={classes["button---alt"]} onClick={props.onCloseCart}>

@@ -4,12 +4,14 @@ import { useRef } from "react";
 
 const MedicineForm = (props) => {
   const amountInputRef = useRef();
+
   const submitHandler = (e) => {
     e.preventDefault();
     const enteredAmount = amountInputRef.current.value;
     const entereAmountNumber = +enteredAmount;
-    console.log(entereAmountNumber);
+    props.onAddToCart(entereAmountNumber);
   };
+
   return (
     <form className={classes.form} onSubmit={submitHandler}>
       <Input
